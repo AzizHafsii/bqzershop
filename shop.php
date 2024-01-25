@@ -197,13 +197,14 @@ $result = $conn->query($sql);
     <?php
     while ($row = $result->fetch_assoc()) {
         echo '<div class="col-md-4">';
-        echo '<div class="card mb-4 product-wap rounded-0">';
+        echo '<div class="card mb-4 product-wap rounded-0" style="height: 400px;">'; // Set a fixed height for the card
         echo '<div class="card rounded-0">';
-        echo '<img class="card-img rounded-0 img-fluid" src="' . $row['image_url'] . '">';
+        echo '<img class="card-img rounded-0 img-fluid" src="' . $row['image_url'] . '" style="height: 340px;">'; // Set a fixed height for the image
         // Add other product details as needed
-        echo '<div class="card-body">';
+        echo '<div class="card-body text-center">';
         echo '<a href="" class="h3 text-decoration-none">' . $row['product_name'] . '</a>';
         echo '<p class="text-center mb-0">$' . $row['product_price'] . '</p>';
+        echo '<button class="btn btn-primary mt-2">Add to Cart</button>';
         echo '</div>';
         echo '</div>';
         echo '</div>';
@@ -211,7 +212,8 @@ $result = $conn->query($sql);
     }
     ?>
 </div>
-            <!-- Pagination code goes here -->
+<!-- Pagination code goes here -->
+
         </div>
     </div>
 </div>
